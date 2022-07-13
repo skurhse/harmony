@@ -1,3 +1,5 @@
+SHELL = /usr/bin/env bash
+
 .PHONY: activate reqs venv
 reqs:
 	sudo apt-get update
@@ -8,4 +10,4 @@ venv:
 	python3 -m venv .venv
 
 activate:
-	source venv/bin/activate
+	source .venv/bin/activate
