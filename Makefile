@@ -21,3 +21,8 @@ pip: $(VENV)
 define activate
 	source $(VENV)/bin/activate
 endef
+
+.PHONY: run
+run : pip
+	src/main.py
+

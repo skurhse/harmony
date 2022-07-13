@@ -1,14 +1,17 @@
+#!/usr/bin/env python3
+
 # Create HTML5 color roles. <>
 
 from lib.client import Client
-from discord import Intents
+import discord
 from os import environ as env
 
 token = env['DISCORD_TOKEN']
 
 intents = discord.Intents.default()
 
-intents.message_content = True
+print(intents)
+# intents.message_content = True
 
 client = Client(intents=intents)
 
