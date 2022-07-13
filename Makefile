@@ -1,13 +1,23 @@
 SHELL = /usr/bin/env bash
 
-.PHONY: activate reqs venv
-reqs:
+VENV = .venv
+
+.PHONY: apt-get install pip venv
+
+install : apt-get venv pip
+
+apt-get:
 	sudo apt-get update
 	sudo apt-get install python3-pip python3-venv
-	python3 -m pip install --upgrade discord.py
 
-venv:
+venv : $(VENV)
+$(VENV):
 	python3 -m venv .venv
 
-activate:
-	source .venv/bin/activate
+pip: $(VENV)
+	$(call activate); \
+	pip install -r requirements.txt
+
+define activate
+	source $(VENV)/bin/activate
+endef
