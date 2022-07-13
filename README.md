@@ -1,2 +1,1 @@
-# pronouns
-a list of pronouns for roleypoly
+https://discord.gg/transprogrammer
